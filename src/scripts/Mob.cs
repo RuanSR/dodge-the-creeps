@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Mod : RigidBody2D
+public class Mob : RigidBody2D
 {
     public override void _Ready()
     {
