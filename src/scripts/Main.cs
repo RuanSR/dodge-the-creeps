@@ -10,13 +10,14 @@ public class Main : Node
     public override void _Ready()
     {
         GD.Randomize();
-        NewGame();
     }
 
     public void GameOver()
     {
         GetNode<Timer>("MobTimer").Stop();
         GetNode<Timer>("ScoreTimer").Stop();
+        GetNode<HUD>("HUD").ShowGameOver();
+
     }
 
     public void NewGame()
@@ -28,11 +29,18 @@ public class Main : Node
         player.Start(startPosition.Position);
 
         GetNode<Timer>("StartTimer").Start();
+
+        var hud = GetNode<HUD>("HUD");
+        hud.UpdateScore(Score);
+        hud.ShowMessage("Get Ready!");
+
+        GetTree().CallGroup("mobs", "queue_free");
     }
 
     public void OnScoreTimerTimeout()
     {
         Score++;
+        GetNode<HUD>("HUD").UpdateScore(Score);
     }
 
     public void OnStartTimerTimeout()
