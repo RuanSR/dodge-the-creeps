@@ -6,10 +6,15 @@ public class Main : Node
     [Export]
     public PackedScene MobScene;
 
+    public AudioStreamPlayer AudioStreamMusic { get; set; }
+    public AudioStreamPlayer AudioStreamDeadAudio { get; set; }
+
     public int Score;
     public override void _Ready()
     {
         GD.Randomize();
+        AudioStreamMusic = GetNode<AudioStreamPlayer>("Music");
+        AudioStreamDeadAudio = GetNode<AudioStreamPlayer>("DeadAudio");
     }
 
     public void GameOver()
@@ -17,6 +22,9 @@ public class Main : Node
         GetNode<Timer>("MobTimer").Stop();
         GetNode<Timer>("ScoreTimer").Stop();
         GetNode<HUD>("HUD").ShowGameOver();
+        AudioStreamDeadAudio.Play();
+        AudioStreamMusic.Stop();
+
 
     }
 
@@ -35,6 +43,8 @@ public class Main : Node
         hud.ShowMessage("Get Ready!");
 
         GetTree().CallGroup("mobs", "queue_free");
+
+        AudioStreamMusic.Play();
     }
 
     public void OnScoreTimerTimeout()
