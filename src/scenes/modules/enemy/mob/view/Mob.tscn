@@ -6,7 +6,7 @@
 [ext_resource path="res://src/assets/art/enemySwimming_1.png" type="Texture" id=4]
 [ext_resource path="res://src/assets/art/enemySwimming_2.png" type="Texture" id=5]
 [ext_resource path="res://src/assets/art/enemyWalking_2.png" type="Texture" id=6]
-[ext_resource path="res://src/view/MobView.cs" type="Script" id=7]
+[ext_resource path="res://src/scenes/modules/enemy/mob/view/MobView.cs" type="Script" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -41,7 +41,6 @@ __meta__ = {
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "swim"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

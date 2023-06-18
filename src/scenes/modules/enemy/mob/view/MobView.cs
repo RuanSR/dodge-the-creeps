@@ -1,8 +1,7 @@
-using System;
-using DodgeTheCreeps.src.presenter;
 using Godot;
+using DodgeTheCreeps.src.scenes.modules.enemy.mob.presenter;
 
-namespace DodgeTheCreeps.src.view
+namespace DodgeTheCreeps.src.scenes.modules.enemy.mob.view
 {
     public class MobView : RigidBody2D, IMobView
     {

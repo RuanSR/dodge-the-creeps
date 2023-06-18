@@ -1,6 +1,6 @@
 using Godot;
 
-namespace DodgeTheCreeps.src.view
+namespace DodgeTheCreeps.src.scenes.modules.enemy.mob.view
 {
     public interface IMobView
     {

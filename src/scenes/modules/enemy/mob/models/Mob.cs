@@ -1,6 +1,6 @@
 using Godot;
 
-namespace DodgeTheCreeps.src.model
+namespace DodgeTheCreeps.src.scenes.modules.enemy.mob.model
 {
     public class Mob
     {

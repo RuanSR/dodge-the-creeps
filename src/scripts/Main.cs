@@ -1,5 +1,5 @@
-using DodgeTheCreeps.src.view;
 using Godot;
+using DodgeTheCreeps.src.scenes.modules.enemy.mob.view;
 
 public class Main : Node
 {
