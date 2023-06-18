@@ -1,5 +1,5 @@
+using DodgeTheCreeps.src.view;
 using Godot;
-using System;
 
 public class Main : Node
 {
@@ -66,7 +66,7 @@ public class Main : Node
         // obviously Mob and PathFollow2D, since they appear later on the line.
 
         // Create a new instance of the Mob scene.
-        var mob = (Mob)MobScene.Instance();
+        var mob = (MobView)MobScene.Instance();
 
         // Choose a random location on Path2D.
         var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");

@@ -6,7 +6,7 @@
 [ext_resource path="res://src/assets/art/enemySwimming_1.png" type="Texture" id=4]
 [ext_resource path="res://src/assets/art/enemySwimming_2.png" type="Texture" id=5]
 [ext_resource path="res://src/assets/art/enemyWalking_2.png" type="Texture" id=6]
-[ext_resource path="res://src/view/MobView.cs" type="Script" id=7]
+[ext_resource path="res://src/scripts/presenter/MobPresenter.cs" type="Script" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
