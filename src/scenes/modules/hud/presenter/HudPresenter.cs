@@ -37,9 +37,9 @@ namespace DodgeTheCreeps.src.scenes.modules.hud.presenter
         {
             ShowMessage("Game Over");
 
-            StartMessageTimer();
-
             await _view.ToSignal(HudModel.MessageTimer, "timeout");
+
+            HudModel.MessageTimer.Stop();
 
             HudModel.SetTextMessageLabel("Dodge the\nCreeps!");
             HudModel.ShowMessageLabel();

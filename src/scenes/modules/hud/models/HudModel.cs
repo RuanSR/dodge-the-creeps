@@ -26,7 +26,7 @@ namespace DodgeTheCreeps.src.scenes.modules.hud.models
 
         public void HideMessageLabel()
         {
-            _message.Show();
+            _message.Hide();
         }
 
         public void SetTextMessageLabel(string text)
