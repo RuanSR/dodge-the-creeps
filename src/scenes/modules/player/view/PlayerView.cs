@@ -4,8 +4,11 @@ using DodgeTheCreeps.src.scenes.modules.player.models;
 
 namespace DodgeTheCreeps.src.scenes.modules.player.view
 {
-    public class Player : Area2D, IPlayer
+    public class PlayerView : Area2D
     {
+        [Signal]
+        public delegate void Hit();
+
         public PlayerModel PlayerModel { get; set; }
         public Vector2 ScreenSize { get; set; }
         private PlayerPresenter _playerPresenter;

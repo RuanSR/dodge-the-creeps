@@ -1,18 +1,16 @@
 using Godot;
 using DodgeTheCreeps.src.scenes.modules.player.view;
-using DodgeTheCreeps.src.scenes.modules.player.models;
 
 namespace DodgeTheCreeps.src.scenes.modules.player.presenter
 {
     public class PlayerPresenter
     {
-        private Player _payer;
+        private PlayerView _payer;
 
-        public PlayerPresenter(Player player)
+        public PlayerPresenter(PlayerView player)
         {
             _payer = player;
         }
-
 
         public void ActionMovimentPressed(float delta)
         {
@@ -70,7 +68,7 @@ namespace DodgeTheCreeps.src.scenes.modules.player.presenter
         public void OnPlayerBodyEntered(PhysicsBody2D body)
         {
             _payer.Hide();
-            _payer.EmitSignal(nameof(PlayerModel.Hit));
+            _payer.EmitSignal("Hit");
             _payer.PlayerModel.CollisionShape2D.SetDeferred("disabled", true);
         }
 

@@ -33,7 +33,7 @@ public class Main : Node
     {
         Score = 0;
 
-        var player = GetNode<Player>("Player");
+        var player = GetNode<PlayerView>("Player");
         var startPosition = GetNode<Position2D>("StartPosition");
         player.Start(startPosition.Position);
 

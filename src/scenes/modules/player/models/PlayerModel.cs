@@ -7,7 +7,6 @@ namespace DodgeTheCreeps.src.scenes.modules.player.models
     {
 
         public int Speed = 400;
-        [Signal] public delegate void Hit();
         public AnimatedSprite AnimatedSprite { get; set; }
         public CollisionShape2D CollisionShape2D { get; set; }
 
