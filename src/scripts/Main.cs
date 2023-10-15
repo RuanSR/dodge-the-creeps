@@ -1,6 +1,7 @@
 using Godot;
 using DodgeTheCreeps.src.scenes.modules.enemy.mob.view;
 using DodgeTheCreeps.src.scenes.modules.player.view;
+using DodgeTheCreeps.src.scenes.modules.hud.view;
 
 public class Main : Node
 {
@@ -22,7 +23,7 @@ public class Main : Node
     {
         GetNode<Timer>("MobTimer").Stop();
         GetNode<Timer>("ScoreTimer").Stop();
-        GetNode<HUD>("HUD").ShowGameOver();
+        GetNode<HudView>("HUD").ShowGameOver();
         AudioStreamDeadAudio.Play();
         AudioStreamMusic.Stop();
 
@@ -39,7 +40,7 @@ public class Main : Node
 
         GetNode<Timer>("StartTimer").Start();
 
-        var hud = GetNode<HUD>("HUD");
+        var hud = GetNode<HudView>("HUD");
         hud.UpdateScore(Score);
         hud.ShowMessage("Get Ready!");
 
@@ -51,7 +52,7 @@ public class Main : Node
     public void OnScoreTimerTimeout()
     {
         Score++;
-        GetNode<HUD>("HUD").UpdateScore(Score);
+        GetNode<HudView>("HUD").UpdateScore(Score);
     }
 
     public void OnStartTimerTimeout()
