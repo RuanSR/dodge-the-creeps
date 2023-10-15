@@ -1,15 +1,22 @@
 using Godot;
 using DodgeTheCreeps.src.scenes.modules.player.view;
+using DodgeTheCreeps.src.scenes.modules.player.models;
 
 namespace DodgeTheCreeps.src.scenes.modules.player.presenter
 {
     public class PlayerPresenter
     {
-        private PlayerView _payer;
+        private readonly PlayerView _payerView;
+        private readonly PlayerModel _playerModel;
 
         public PlayerPresenter(PlayerView player)
         {
-            _payer = player;
+            _payerView = player;
+
+            _playerModel = new PlayerModel(
+                _payerView.GetNode<AnimatedSprite>("AnimatedSprite"),
+                _payerView.GetNode<CollisionShape2D>("CollisionShape2D"));
+
         }
 
         public void ActionMovimentPressed(float delta)
@@ -38,45 +45,45 @@ namespace DodgeTheCreeps.src.scenes.modules.player.presenter
 
             if (velocity.Length() > 0)
             {
-                velocity = velocity.Normalized() * _payer.PlayerModel.Speed;
-                _payer.PlayerModel.AnimatedSprite.Play();
+                velocity = velocity.Normalized() * _playerModel.Speed;
+                _playerModel.PlayAnimatedSprite();
             }
             else
             {
-                _payer.PlayerModel.AnimatedSprite.Stop();
+                _playerModel.StopAnimatedSprite();
             }
 
-            _payer.Position += velocity * delta;
-            _payer.PlayerModel.Position = new Vector2(
-               x: Mathf.Clamp(_payer.Position.x, 0, _payer.ScreenSize.x),
-               y: Mathf.Clamp(_payer.Position.y, 0, _payer.ScreenSize.y)
+            _payerView.Position += velocity * delta;
+            _playerModel.Position = new Vector2(
+               x: Mathf.Clamp(_payerView.Position.x, 0, _payerView.ScreenSize.x),
+               y: Mathf.Clamp(_payerView.Position.y, 0, _payerView.ScreenSize.y)
            );
 
             if (velocity.x != 0)
             {
-                _payer.PlayerModel.AnimatedSprite.Animation = "walk";
-                _payer.PlayerModel.AnimatedSprite.FlipV = false;
-                _payer.PlayerModel.AnimatedSprite.FlipH = velocity.x < 0;
+                _playerModel.SetAnimationAnimatedSprite(enums.EAnimType.Walk);
+                _playerModel.SetFlipAnimatedSprite(enums.EFlipType.FlipV, false);
+                _playerModel.SetFlipAnimatedSprite(enums.EFlipType.FlipH, velocity.x < 0);
             }
             else if (velocity.y != 0)
             {
-                _payer.PlayerModel.AnimatedSprite.Animation = "up";
-                _payer.PlayerModel.AnimatedSprite.FlipV = velocity.y > 0;
+                _playerModel.SetAnimationAnimatedSprite(enums.EAnimType.Up);
+                _playerModel.SetFlipAnimatedSprite(enums.EFlipType.FlipV, velocity.y > 0);
             }
         }
 
         public void OnPlayerBodyEntered(PhysicsBody2D body)
         {
-            _payer.Hide();
-            _payer.EmitSignal("Hit");
-            _payer.PlayerModel.CollisionShape2D.SetDeferred("disabled", true);
+            _payerView.Hide();
+            _payerView.EmitSignal("Hit");
+            _playerModel.SetDeferredCollisionShape2D("disabled", true);
         }
 
         public void Start(Vector2 pos)
         {
-            _payer.Position = pos;
-            _payer.Show();
-            _payer.PlayerModel.CollisionShape2D.Disabled = false;
+            _payerView.Position = pos;
+            _payerView.Show();
+            _playerModel.SetDeferredCollisionShape2D("disabled", false);
         }
     }
 }

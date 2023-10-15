@@ -1,6 +1,5 @@
 using Godot;
 using DodgeTheCreeps.src.scenes.modules.player.presenter;
-using DodgeTheCreeps.src.scenes.modules.player.models;
 
 namespace DodgeTheCreeps.src.scenes.modules.player.view
 {
@@ -9,13 +8,11 @@ namespace DodgeTheCreeps.src.scenes.modules.player.view
         [Signal]
         public delegate void Hit();
 
-        public PlayerModel PlayerModel { get; set; }
         public Vector2 ScreenSize { get; set; }
         private PlayerPresenter _playerPresenter;
 
         public override void _Ready()
         {
-            PlayerModel = new PlayerModel(GetNode<AnimatedSprite>("AnimatedSprite"), GetNode<CollisionShape2D>("CollisionShape2D"));
             _playerPresenter = new PlayerPresenter(this);
         }
 
