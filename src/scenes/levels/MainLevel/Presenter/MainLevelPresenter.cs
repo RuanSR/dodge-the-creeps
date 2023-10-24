@@ -25,20 +25,20 @@ namespace DodgeTheCreeps.src.scenes.levels.MainLevel.Presenter
 
         public void GameOver()
         {
-            levelModel.MobTimer.Stop();
-            levelModel.ScoreTimer.Stop();
+            levelModel.StopMobTimer();
+            levelModel.StopScoreTimer();
             levelModel.HudView.ShowGameOver();
-            levelModel.AudioStreamDeadAudio.Play();
-            levelModel.AudioStreamMusic.Stop();
+            levelModel.PlayAudioStreamDeadAudio();
+            levelModel.StopAudioStreamMuic();
         }
 
         public void NewGame()
         {
-            levelModel.Score = 0;
+            levelModel.ResetScore();
 
-            levelModel.PlayerView.Start(levelModel.StartPosition.Position);
+            levelModel.PlayerView.Start(levelModel.GetStartPosition());
 
-            levelModel.StartTimer.Start();
+            levelModel.StartStartTimer();
 
             levelModel.HudView.UpdateScore(levelModel.Score);
 
@@ -46,20 +46,20 @@ namespace DodgeTheCreeps.src.scenes.levels.MainLevel.Presenter
 
             _view.GetTree().CallGroup("mobs", "queue_free");
 
-            levelModel.AudioStreamMusic.Play();
+            levelModel.PlayAudioStreamMuic();
 
         }
 
         public void OnScoreTimerTimeout()
         {
-            levelModel.Score++;
+            levelModel.ScoredPoint();
             levelModel.HudView.UpdateScore(levelModel.Score);
         }
 
         public void OnStartTimerTimeout()
         {
-            levelModel.MobTimer.Start();
-            levelModel.ScoreTimer.Start();
+            levelModel.StartMobTimer();
+            levelModel.StartScoreTimer();
         }
 
         public void OnMobTimerTimeout()
