@@ -1,11 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/assets/art/gameover.wav" type="AudioStream" id=1]
 [ext_resource path="res://src/assets/art/House In a Forest Loop.ogg" type="AudioStream" id=2]
 [ext_resource path="res://src/scenes/levels/MainLevel/Model/MobPath.cs" type="Script" id=3]
 [ext_resource path="res://src/scenes/levels/MainLevel/View/MainLevelView.cs" type="Script" id=4]
-[ext_resource path="res://src/scenes/modules/player/view/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/scenes/modules/hud/view/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/scenes/modules/enemy/mob/view/Mob.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Curve2D" id=1]
@@ -21,9 +19,6 @@ MobScene = ExtResource( 7 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.258824, 0.282353, 0.447059, 1 )
-
-[node name="Player" parent="." instance=ExtResource( 5 )]
-visible = false
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -43,8 +38,6 @@ script = ExtResource( 3 )
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 position = Vector2( -5, 1 )
 rotation = -0.00835055
-
-[node name="HUD" parent="." instance=ExtResource( 6 )]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )

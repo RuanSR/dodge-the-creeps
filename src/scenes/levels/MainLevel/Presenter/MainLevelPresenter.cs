@@ -4,6 +4,7 @@ using DodgeTheCreeps.src.scenes.levels.MainLevel.View;
 using DodgeTheCreeps.src.scenes.modules.enemy.mob.view;
 using DodgeTheCreeps.src.scenes.modules.hud.view;
 using DodgeTheCreeps.src.scenes.modules.player.view;
+using DodgeTheCreeps.src.scenes.Shared;
 
 namespace DodgeTheCreeps.src.scenes.levels.MainLevel.Presenter
 {
@@ -15,12 +16,16 @@ namespace DodgeTheCreeps.src.scenes.levels.MainLevel.Presenter
         public MainLevelPresenter(MainLevelView view)
         {
             _view = view;
+
+            var playerView = _view.LoadAndInstance<PlayerView>("res://src/scenes/modules/player/view/Player.tscn");
+            var hudView = _view.LoadAndInstance<HudView>("res://src/scenes/modules/hud/view/HUD.tscn");
+
             levelModel = new MainLevelModel(
                 _view.GetNode<ColorRect>("ColorRect"), _view.GetNode<Timer>("MobTimer"),
                 _view.GetNode<Timer>("ScoreTimer"), _view.GetNode<Timer>("StartTimer"),
                 _view.GetNode<Position2D>("StartPosition"), _view.GetNode<AudioStreamPlayer>("Music"),
-                _view.GetNode<AudioStreamPlayer>("DeadAudio"), _view.GetNode<HudView>("HUD"),
-                _view.GetNode<PlayerView>("Player"), (MobPath)_view.GetNode<Path2D>("MobPath"));
+                _view.GetNode<AudioStreamPlayer>("DeadAudio"), hudView,
+                playerView, (MobPath)_view.GetNode<Path2D>("MobPath"));
 
             levelModel.ConnectSignals(_view);
         }
