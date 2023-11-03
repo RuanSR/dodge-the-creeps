@@ -1,3 +1,4 @@
+using DodgeTheCreeps.src.scenes.modules.hud.view;
 using Godot;
 
 namespace DodgeTheCreeps.src.scenes.modules.hud.models
@@ -17,6 +18,12 @@ namespace DodgeTheCreeps.src.scenes.modules.hud.models
             _message = message;
             _startButton = startButton;
             MessageTimer = messageTimer;
+        }
+
+        public void ConnectSignals(HudView view)
+        {
+            _startButton.Connect("pressed", view, nameof(view.OnStartButtonPressed));
+            MessageTimer.Connect("timeout", view, nameof(view.OnMessageTimerTimeout));
         }
 
         public void ShowMessageLabel()

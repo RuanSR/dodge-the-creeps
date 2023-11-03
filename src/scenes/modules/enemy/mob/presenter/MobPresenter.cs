@@ -17,6 +17,8 @@ namespace DodgeTheCreeps.src.scenes.modules.enemy.mob.presenter
                 _view.GetNode<AnimatedSprite>("AnimatedSprite"),
                 _view.GetNode<CollisionShape2D>("CollisionShape2D"),
                 _view.GetNode<VisibilityNotifier2D>("VisibilityNotifier2D"));
+
+            _mobModel.ConnectSignals(_view);
         }
 
         public void EnableAnimatedSprite()

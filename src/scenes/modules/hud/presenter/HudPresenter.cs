@@ -20,6 +20,8 @@ namespace DodgeTheCreeps.src.scenes.modules.hud.presenter
             HudModel = new HudModel(
             _view.GetNode<Label>("ScoreLabel"), _view.GetNode<Label>("Message"),
             _view.GetNode<Button>("StartButton"), _view.GetNode<Timer>("MessageTimer"));
+
+            HudModel.ConnectSignals(_view);
         }
 
         public void ShowMessage(string text)

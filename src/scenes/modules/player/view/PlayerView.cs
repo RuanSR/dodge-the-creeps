@@ -14,6 +14,7 @@ namespace DodgeTheCreeps.src.scenes.modules.player.view
         public override void _Ready()
         {
             _playerPresenter = new PlayerPresenter(this);
+            Connect("body_entered", this, nameof(OnPlayerBodyEntered));
         }
 
         public override void _Process(float delta)

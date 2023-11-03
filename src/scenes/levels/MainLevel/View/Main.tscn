@@ -23,6 +23,7 @@ anchor_bottom = 1.0
 color = Color( 0.258824, 0.282353, 0.447059, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -51,8 +52,6 @@ stream = ExtResource( 2 )
 [node name="DeadAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 
-[connection signal="Hit" from="Player" to="." method="GameOver"]
 [connection signal="timeout" from="MobTimer" to="." method="OnMobTimerTimeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="OnScoreTimerTimeout"]
 [connection signal="timeout" from="StartTimer" to="." method="OnStartTimerTimeout"]
-[connection signal="StartGame" from="HUD" to="." method="NewGame"]

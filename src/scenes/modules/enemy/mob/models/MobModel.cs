@@ -1,3 +1,4 @@
+using DodgeTheCreeps.src.scenes.modules.enemy.mob.view;
 using Godot;
 
 namespace DodgeTheCreeps.src.scenes.modules.enemy.mob.model
@@ -18,6 +19,11 @@ namespace DodgeTheCreeps.src.scenes.modules.enemy.mob.model
             _visibilityNotifier2D = visibilityNotifier2D;
             _mobTypes = _animatedSprite.Frames.GetAnimationNames();
             SetRandomMobTypes();
+        }
+
+        public void ConnectSignals(MobView view)
+        {
+            _visibilityNotifier2D.Connect("screen_exited", view, nameof(view.OnVisibilityNotifier2DScreenExited));
         }
 
         public void EnableAnimatedSprite() => _animatedSprite.Playing = true;

@@ -13,6 +13,8 @@ namespace DodgeTheCreeps.src.scenes.modules.hud.view
         public override void _Ready()
         {
             _presenter = new HudPresenter(this);
+            // Connect("pressed", this, nameof(OnStartButtonPressed));
+            // Connect("pressed", this, nameof(OnStartButtonPressed));
         }
 
         public void ShowMessage(string text)

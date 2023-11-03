@@ -21,6 +21,8 @@ namespace DodgeTheCreeps.src.scenes.levels.MainLevel.Presenter
                 _view.GetNode<Position2D>("StartPosition"), _view.GetNode<AudioStreamPlayer>("Music"),
                 _view.GetNode<AudioStreamPlayer>("DeadAudio"), _view.GetNode<HudView>("HUD"),
                 _view.GetNode<PlayerView>("Player"), (MobPath)_view.GetNode<Path2D>("MobPath"));
+
+            levelModel.ConnectSignals(_view);
         }
 
         public void GameOver()

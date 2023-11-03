@@ -1,6 +1,7 @@
 using Godot;
 using DodgeTheCreeps.src.scenes.modules.hud.view;
 using DodgeTheCreeps.src.scenes.modules.player.view;
+using DodgeTheCreeps.src.scenes.levels.MainLevel.View;
 
 namespace DodgeTheCreeps.src.scenes.levels.MainLevel.Model
 {
@@ -63,5 +64,10 @@ namespace DodgeTheCreeps.src.scenes.levels.MainLevel.Model
             _audioStreamDeadAudio.Play();
         }
 
+        public void ConnectSignals(MainLevelView view)
+        {
+            HudView.Connect("StartGame", view, nameof(view.NewGame));
+            PlayerView.Connect("Hit", view, nameof(view.GameOver));
+        }
     }
 }
