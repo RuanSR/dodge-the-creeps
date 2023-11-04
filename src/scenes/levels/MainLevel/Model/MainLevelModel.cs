@@ -68,6 +68,9 @@ namespace DodgeTheCreeps.src.scenes.levels.MainLevel.Model
         {
             HudView.Connect("StartGame", view, nameof(view.NewGame));
             PlayerView.Connect("Hit", view, nameof(view.GameOver));
+            _startTimer.Connect("timeout", view, nameof(view.OnStartTimerTimeout));
+            _scoreTimer.Connect("timeout", view, nameof(view.OnScoreTimerTimeout));
+            _mobTimer.Connect("timeout", view, nameof(view.OnMobTimerTimeout));
         }
     }
 }
