@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/gameover.wav-f08021bf0dce8c1096444ca8d58f451d.sample"
+path="res://.import/gameover.wav-3c931cdc03d6493719db290263de6ca2.sample"
 
 [deps]
 
-source_file="res://src/assets/art/gameover.wav"
-dest_files=[ "res://.import/gameover.wav-f08021bf0dce8c1096444ca8d58f451d.sample" ]
+source_file="res://src/Assets/art/gameover.wav"
+dest_files=[ "res://.import/gameover.wav-3c931cdc03d6493719db290263de6ca2.sample" ]
 
 [params]
 

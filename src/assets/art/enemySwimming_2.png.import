@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemySwimming_2.png-7c2f56028011b8bbe956b16eb3abba9a.stex"
+path="res://.import/enemySwimming_2.png-0c4e4e9204d472aeb1befa79c9c6b6d4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/assets/art/enemySwimming_2.png"
-dest_files=[ "res://.import/enemySwimming_2.png-7c2f56028011b8bbe956b16eb3abba9a.stex" ]
+source_file="res://src/Assets/art/enemySwimming_2.png"
+dest_files=[ "res://.import/enemySwimming_2.png-0c4e4e9204d472aeb1befa79c9c6b6d4.stex" ]
 
 [params]
 
