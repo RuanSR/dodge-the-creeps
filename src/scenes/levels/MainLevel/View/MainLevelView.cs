@@ -1,7 +1,7 @@
 using Godot;
-using DodgeTheCreeps.src.scenes.levels.MainLevel.Presenter;
+using DodgeTheCreeps.src.Scenes.Levels.MainLevel.Presenter;
 
-namespace DodgeTheCreeps.src.scenes.levels.MainLevel.View
+namespace DodgeTheCreeps.src.Scenes.Levels.MainLevel.View
 {
     public class MainLevelView : Node
     {

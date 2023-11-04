@@ -1,7 +1,7 @@
 using Godot;
-using DodgeTheCreeps.src.scenes.modules.player.presenter;
+using DodgeTheCreeps.src.Scenes.Modules.Player.Presenter;
 
-namespace DodgeTheCreeps.src.scenes.modules.player.view
+namespace DodgeTheCreeps.src.Scenes.Modules.Player.View
 {
     public class PlayerView : Area2D
     {

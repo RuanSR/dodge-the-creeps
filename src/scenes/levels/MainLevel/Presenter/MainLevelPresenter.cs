@@ -1,12 +1,12 @@
 using Godot;
-using DodgeTheCreeps.src.scenes.levels.MainLevel.Model;
-using DodgeTheCreeps.src.scenes.levels.MainLevel.View;
-using DodgeTheCreeps.src.scenes.modules.enemy.mob.view;
-using DodgeTheCreeps.src.scenes.modules.hud.view;
-using DodgeTheCreeps.src.scenes.modules.player.view;
-using DodgeTheCreeps.src.scenes.Shared;
+using DodgeTheCreeps.src.Scenes.Levels.MainLevel.Model;
+using DodgeTheCreeps.src.Scenes.Levels.MainLevel.View;
+using DodgeTheCreeps.src.Scenes.Modules.Enemy.Mob.View;
+using DodgeTheCreeps.src.Scenes.Modules.Hud.View;
+using DodgeTheCreeps.src.Scenes.Modules.Player.View;
+using DodgeTheCreeps.src.Scenes.Shared;
 
-namespace DodgeTheCreeps.src.scenes.levels.MainLevel.Presenter
+namespace DodgeTheCreeps.src.Scenes.Levels.MainLevel.Presenter
 {
     public class MainLevelPresenter
     {
@@ -25,7 +25,7 @@ namespace DodgeTheCreeps.src.scenes.levels.MainLevel.Presenter
                 _view.GetNode<Timer>("ScoreTimer"), _view.GetNode<Timer>("StartTimer"),
                 _view.GetNode<Position2D>("StartPosition"), _view.GetNode<AudioStreamPlayer>("Music"),
                 _view.GetNode<AudioStreamPlayer>("DeadAudio"), hudView,
-                playerView, (MobPath)_view.GetNode<Path2D>("MobPath"));
+                playerView, (MobPathModel)_view.GetNode<Path2D>("MobPath"));
 
             levelModel.ConnectSignals(_view);
         }

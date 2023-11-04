@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DodgeTheCreeps.src.scenes.modules.hud.models;
-using DodgeTheCreeps.src.scenes.modules.hud.view;
 using Godot;
+using System.Threading.Tasks;
+using DodgeTheCreeps.src.Scenes.Modules.Hud.Models;
+using DodgeTheCreeps.src.Scenes.Modules.Hud.View;
 
-namespace DodgeTheCreeps.src.scenes.modules.hud.presenter
+namespace DodgeTheCreeps.src.Scenes.Modules.Hud.Presenter
 {
     public class HudPresenter
     {

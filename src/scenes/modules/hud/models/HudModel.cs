@@ -1,7 +1,7 @@
-using DodgeTheCreeps.src.scenes.modules.hud.view;
 using Godot;
+using DodgeTheCreeps.src.Scenes.Modules.Hud.View;
 
-namespace DodgeTheCreeps.src.scenes.modules.hud.models
+namespace DodgeTheCreeps.src.Scenes.Modules.Hud.Models
 {
     public class HudModel
     {

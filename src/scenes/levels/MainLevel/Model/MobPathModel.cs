@@ -1,8 +1,8 @@
 using Godot;
 
-namespace DodgeTheCreeps.src.scenes.levels.MainLevel.Model
+namespace DodgeTheCreeps.src.Scenes.Levels.MainLevel.Model
 {
-    public class MobPath : Path2D
+    public class MobPathModel : Path2D
     {
         public PathFollow2D MobSpawnLocation { get; private set; }
 

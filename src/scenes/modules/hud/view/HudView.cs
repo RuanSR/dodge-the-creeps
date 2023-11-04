@@ -1,7 +1,7 @@
 using Godot;
-using DodgeTheCreeps.src.scenes.modules.hud.presenter;
+using DodgeTheCreeps.src.Scenes.Modules.Hud.Presenter;
 
-namespace DodgeTheCreeps.src.scenes.modules.hud.view
+namespace DodgeTheCreeps.src.Scenes.Modules.Hud.View
 {
     public class HudView : CanvasLayer
     {
@@ -13,8 +13,6 @@ namespace DodgeTheCreeps.src.scenes.modules.hud.view
         public override void _Ready()
         {
             _presenter = new HudPresenter(this);
-            // Connect("pressed", this, nameof(OnStartButtonPressed));
-            // Connect("pressed", this, nameof(OnStartButtonPressed));
         }
 
         public void ShowMessage(string text)

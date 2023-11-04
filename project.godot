@@ -10,8 +10,8 @@ config_version=4
 
 [application]
 
-config/name="Dodge The Creeps"
-run/main_scene="res://src/scenes/levels/MainLevel/View/Main.tscn"
+config/name="DodgeTheCreeps"
+run/main_scene="res://src/Scenes/Levels/MainLevel/View/Main.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -42,7 +42,7 @@ start_game={
 
 [mono]
 
-project/assembly_name="Dodge The Creeps"
+project/assembly_name="DodgeTheCreeps"
 
 [physics]
 

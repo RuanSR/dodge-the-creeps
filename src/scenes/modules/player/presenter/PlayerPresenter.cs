@@ -1,8 +1,8 @@
 using Godot;
-using DodgeTheCreeps.src.scenes.modules.player.view;
-using DodgeTheCreeps.src.scenes.modules.player.models;
+using DodgeTheCreeps.src.Scenes.Modules.Player.View;
+using DodgeTheCreeps.src.Scenes.Modules.Player.Models;
 
-namespace DodgeTheCreeps.src.scenes.modules.player.presenter
+namespace DodgeTheCreeps.src.Scenes.Modules.Player.Presenter
 {
     public class PlayerPresenter
     {
@@ -61,14 +61,14 @@ namespace DodgeTheCreeps.src.scenes.modules.player.presenter
 
             if (velocity.x != 0)
             {
-                _playerModel.SetAnimationAnimatedSprite(enums.EAnimType.Walk);
-                _playerModel.SetFlipAnimatedSprite(enums.EFlipType.FlipV, false);
-                _playerModel.SetFlipAnimatedSprite(enums.EFlipType.FlipH, velocity.x < 0);
+                _playerModel.SetAnimationAnimatedSprite(Enums.EAnimType.Walk);
+                _playerModel.SetFlipAnimatedSprite(Enums.EFlipType.FlipV, false);
+                _playerModel.SetFlipAnimatedSprite(Enums.EFlipType.FlipH, velocity.x < 0);
             }
             else if (velocity.y != 0)
             {
-                _playerModel.SetAnimationAnimatedSprite(enums.EAnimType.Up);
-                _playerModel.SetFlipAnimatedSprite(enums.EFlipType.FlipV, velocity.y > 0);
+                _playerModel.SetAnimationAnimatedSprite(Enums.EAnimType.Up);
+                _playerModel.SetFlipAnimatedSprite(Enums.EFlipType.FlipV, velocity.y > 0);
             }
         }
 

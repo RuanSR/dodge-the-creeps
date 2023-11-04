@@ -1,9 +1,9 @@
 using Godot;
-using DodgeTheCreeps.src.scenes.modules.hud.view;
-using DodgeTheCreeps.src.scenes.modules.player.view;
-using DodgeTheCreeps.src.scenes.levels.MainLevel.View;
+using DodgeTheCreeps.src.Scenes.Modules.Hud.View;
+using DodgeTheCreeps.src.Scenes.Modules.Player.View;
+using DodgeTheCreeps.src.Scenes.Levels.MainLevel.View;
 
-namespace DodgeTheCreeps.src.scenes.levels.MainLevel.Model
+namespace DodgeTheCreeps.src.Scenes.Levels.MainLevel.Model
 {
     public class MainLevelModel
     {
@@ -14,7 +14,7 @@ namespace DodgeTheCreeps.src.scenes.levels.MainLevel.Model
         private readonly Position2D _startPosition;
         private readonly AudioStreamPlayer _audioStreamMusic;
         private readonly AudioStreamPlayer _audioStreamDeadAudio;
-        public MobPath MobPath { get; }
+        public MobPathModel MobPath { get; }
         public HudView HudView { get; }
         public PlayerView PlayerView { get; }
         public int Score { get; private set; }
@@ -22,7 +22,7 @@ namespace DodgeTheCreeps.src.scenes.levels.MainLevel.Model
         public MainLevelModel(
             ColorRect colorRect, Timer mobTimer, Timer scoreTimer,
             Timer startTimer, Position2D startPosition, AudioStreamPlayer audioStreamMusic,
-            AudioStreamPlayer audioStreamDeadAudio, HudView hudView, PlayerView playerView, MobPath mobPath
+            AudioStreamPlayer audioStreamDeadAudio, HudView hudView, PlayerView playerView, MobPathModel mobPath
             )
         {
             _colorRect = colorRect;

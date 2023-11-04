@@ -1,4 +1,4 @@
-namespace DodgeTheCreeps.src.scenes.modules.player.enums
+namespace DodgeTheCreeps.src.Scenes.Modules.Player.Enums
 {
     public enum EAnimType
     {

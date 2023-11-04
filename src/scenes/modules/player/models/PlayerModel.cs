@@ -1,8 +1,8 @@
-using DodgeTheCreeps.src.scenes.modules.player.enums;
+using DodgeTheCreeps.src.Scenes.Modules.Player.Enums;
 using Godot;
 
 
-namespace DodgeTheCreeps.src.scenes.modules.player.models
+namespace DodgeTheCreeps.src.Scenes.Modules.Player.Models
 {
     public class PlayerModel : Area2D
     {

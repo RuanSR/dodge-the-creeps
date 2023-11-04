@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Godot;
 
-namespace DodgeTheCreeps.src.scenes.Shared
+namespace DodgeTheCreeps.src.Scenes.Shared
 {
     public static class NodeExtention
     {

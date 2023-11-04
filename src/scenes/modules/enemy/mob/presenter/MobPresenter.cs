@@ -1,8 +1,8 @@
 using Godot;
-using DodgeTheCreeps.src.scenes.modules.enemy.mob.model;
-using DodgeTheCreeps.src.scenes.modules.enemy.mob.view;
+using DodgeTheCreeps.src.Scenes.Modules.Enemy.Mob.Model;
+using DodgeTheCreeps.src.Scenes.Modules.Enemy.Mob.View;
 
-namespace DodgeTheCreeps.src.scenes.modules.enemy.mob.presenter
+namespace DodgeTheCreeps.src.Scenes.Modules.Enemy.Mob.Presenter
 {
     public class MobPresenter
     {
