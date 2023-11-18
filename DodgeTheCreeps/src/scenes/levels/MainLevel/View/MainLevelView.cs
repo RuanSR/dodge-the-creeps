@@ -13,7 +13,6 @@ namespace DodgeTheCreeps.src.Scenes.Levels.MainLevel.View
         public override void _Ready()
         {
             GD.Randomize();
-
             _mainLevelPresenter = new MainLevelPresenter(this);
         }
 
